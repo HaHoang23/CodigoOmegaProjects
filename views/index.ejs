@@ -1,5 +1,59 @@
-<%- include("template/cabecera", {tituloWeb: 'Página de Inicio'}) %>
+<!DOCTYPE html>
+<html lang="es">
 
-    <h1>index EJS</h1>
-    <h2><%= titulo %></h2>
-<%- include("template/footer") %>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMEGA PROJECTS</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <!-- BARRA-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">OMEGA PROJECTS</a>
+        </div>
+    </nav>
+
+    <!-- CONTENEDOR DE LOS COMPONENTES INICIO DE SESION-->
+    <div class="container">
+        </style>
+        <div class="row">
+
+            <!-- TCT INICIO-->
+            <figure class="text-center" style="margin-top: 100px; ">
+                <blockquote class="blockquote" style="font-size: 30px;">
+                    <p>Bienvenido/a! Inicie sesión <br>en tu cuenta de Omega</p>
+                </blockquote>
+            </figure>
+
+            <!-- TXT NOMBRE USUARIO-->
+            <p class="lead" style="margin-top: 20px; text-align: center; font-size: 17px;">
+                Inicio de sesión
+            </p>
+
+            <!-- FORM USUARIO-->
+            <form>
+                <div class="mb-3 d-grid gap-2 col-7 mx-auto">
+                    <label for="exampleInputEmail1" class="form-label">Nombre de usuario o correo</label>
+                    <input type="email" class="form-control" id="txtCorreoUsuario" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3 d-grid gap-2 col-7 mx-auto">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+            </form>
+
+            <!-- BOTON-->
+            <div class="d-grid gap-4 col-5 mx-auto" style="margin-top: 23px;">
+                <a href="#" style="font-size:130%" class="btn btn-outline-dark" role="button" data-bs-toggle="button">
+                    Siguiente
+                </a>
+            </div>
+        </div>
+    </div>
+    <%- include("template/footer") %>
