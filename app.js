@@ -1,14 +1,19 @@
+// INICIALIZACION
 const express = require("express");
 const app = express();
 
+const morgan = require('morgan');
+
+//CONFIGURACION PUERTO
 const port = process.env.PORT || 3000;
 
-
-//motor de plantillas
+//MOTOR DE PLANTILLAS
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 
+//MIDDLEWARES
 
+app.use(morgan('dev'));
 
 //RUTA PUBLICA
 app.use(express.static(__dirname + "/public"));
@@ -19,7 +24,7 @@ app.use('/mascotas', require('./router/Mascotas'));
 
 
 
-//ERROR
+//ERROR 404
 app.use((req, res, next) => {
    res.status(404).render('404', {
       titulo: "404",
