@@ -25,18 +25,19 @@
         <div class="row">
 
             <!-- TCT INICIO-->
-            <figure class="text-center" style="margin-top: 100px; ">
+            <figure class="text-center" style="margin-top: 50px; ">
                 <blockquote class="blockquote" style="font-size: 30px;">
                     <p>Bienvenido/a! Inicie sesión <br>en tu cuenta de Omega</p>
                 </blockquote>
             </figure>
 
+            <!-- IMAGEN LOGOTIPO -->
+            <img src="/img/LOGO.gif" alt="LOGO" style="width:300px; height:300px; margin-top: -20px;" class="mx-auto">
+
             <!-- TXT NOMBRE USUARIO-->
-            <p class="lead" style="margin-top: 20px; text-align: center; font-size: 17px;">
+            <p class="lead" style="margin-top: 0px; text-align: center; font-size: 17px;">
                 Inicio de sesión
             </p>
-
-            <img src="/public/img/LOGO.gif" alt="LOGO">
 
             <!-- FORM USUARIO-->
             <form>
@@ -47,15 +48,20 @@
                 <div class="mb-3 d-grid gap-2 col-7 mx-auto">
                     <label for="exampleInputPassword1" class="form-label">Contraseña</label>
                     <input type="password" class="form-control" id="exampleInputPassword1">
+                    <!--BOTON OLVIDO CONTRASEÑA-->
+                    <a type="button" class="btn btn-link" style="font-size: 15px;" href="/recuperacion">¿Olvidaste tu Contraseña?</a>
                 </div>
             </form>
 
             <!-- BOTON-->
-            <div class="d-grid gap-4 col-5 mx-auto" style="margin-top: 23px;">
-                <a href="#" style="font-size:130%" class="btn btn-outline-dark" role="button" data-bs-toggle="button">
+            <div class="d-grid gap-4 col-5 mx-auto" style="margin-top: 23px; margin-bottom: 100px;">
+                <a  style="font-size:130%" class="btn btn-outline-dark" role="button"href="/inicio">
                     Siguiente
                 </a>
             </div>
         </div>
     </div>
+
+
+    
     <%- include("template/footer") %>

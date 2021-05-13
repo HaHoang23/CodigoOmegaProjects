@@ -4,23 +4,37 @@ const app = express();
 
 const morgan = require('morgan');
 
-//CONFIGURACION PUERTO
+//CONFIGURACION 
 const port = process.env.PORT || 3000;
+app.set("view engine", "ejs");
 
 //MOTOR DE PLANTILLAS
-app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
+
 
 //MIDDLEWARES
 
 app.use(morgan('dev'));
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+
+//VARIABLES
+app.use((req,res,next)=>{
+
+   next();
+})
 
 //RUTA PUBLICA
 app.use(express.static(__dirname + "/public"));
 
-//LLAMAR A LAS RUTAS DESDE ROUTER
+//RUTAS WEB
 app.use('/', require('./router/RutasWeb'));
-app.use('/mascotas', require('./router/Mascotas'));
+
+
+//EJEMPLO
+app.use('/links', require('./router/links'));
+app.use('/', require('./router/autentificacion'));
+
 
 
 
@@ -32,7 +46,7 @@ app.use((req, res, next) => {
    });
 })
 
-
+//INCIAR SERVER
 app.listen(port, () => {
    console.log(`Estas con express`);
 })

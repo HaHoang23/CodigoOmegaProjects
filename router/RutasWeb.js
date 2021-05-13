@@ -3,15 +3,19 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-    res.render('index', {titulo: "mi titulo dinamico"})
+    res.render('index')
 })
   
 router.get('/recuperacion', (req, res) => {
-     res.render('recuperacion', {tituloServicio: "Mensaje dinamico de servicios"});
+     res.render('recuperacion');
 })
 
 router.get('/reestablecer', (req, res) => {
     res.render('reestablecer');
+})
+
+router.get('/inicio', (req, res) => {
+    res.render('inicio');
 })
 
 module.exports = router;
