@@ -1,6 +1,7 @@
 // INICIALIZACION
 const express = require("express");
 const app = express();
+const mysql = require('mysql');
 require('./passport');
 
 const morgan = require('morgan');
@@ -20,6 +21,18 @@ app.use(flash());
 //CONFIGURACION 
 const port = process.env.PORT || 3000;
 app.set("view engine", "ejs");
+
+// MYSQL
+//mysql://b133b38c1d2d14:bba5f4e3@us-cdbr-east-03.cleardb.com/heroku_3cf5fb41ba44ac8?reconnect=true
+
+const connection = mysql.createConnection = {
+   HOST: "us-cdbr-east-03.cleardb.com",
+   USER: "b133b38c1d2d14",
+   PASSWORD: "bba5f4e3",
+   DB: "heroku_3cf5fb41ba44ac8"
+ };
+
+
 
 //MOTOR DE PLANTILLAS
 app.set("views", __dirname + "/views");
