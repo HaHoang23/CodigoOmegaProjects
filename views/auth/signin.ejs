@@ -1,34 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
 
-<%- include("../template/cabecera") %>
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-4 mx-auto">
-            <div class="card text-center">
-                <div class="card-header">
-                   <h3>SignIN</h3>
-                </div>
-                <div class="card-body">
-                    <!--MANDA A LLAMAR A AUTENTIFICACION DE ROUTER-->
-                    <form action="/signin" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="username" placeholder="User name" class="form-control">
-                       
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="password" placeholder="Password" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-success btn-block">
-                            SingIn
-                        </button>
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMEGA PROJECTS</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
 
-                </form>
-                </div>
-            </div>
+<body>
+    <!-- BARRA-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">OMEGA PROJECTS</a>
         </div>
+    </nav>
 
+    <!-- CONTENEDOR DE LOS COMPONENTES INICIO DE SESION-->
+    <div class="container">
+        </style>
+        <div class="row">
+
+            <!-- IMAGEN LOGOTIPO -->
+            <img src="/img/LOGO.gif" alt="LOGO" style="width:300px; height:300px; margin-top: -20px;" class="mx-auto">
+
+            <!-- TXT INICIO-->
+            <figure class="text-center" style="margin-top: 0px; ">
+                <blockquote class="blockquote" style="font-size: 30px;">
+                    <p>Bienvenido/a! Inicie sesión en tu cuenta de <br>Omega</p>
+                </blockquote>
+            </figure>
+
+            <!-- FORM USUARIO-->
+            <form action="/signin" method="POST">
+
+                <!-- TXT EMAIL-->
+                <div class="mb-3 d-grid gap-2 col-7 mx-auto">
+                    <label for="exampleInputEmail1" class="form-label">Ingrese su correo electrónico</label>
+                    <input type="email" class="form-control" name="txt_Email" aria-describedby="emailHelp">
+                </div>
+
+                <!-- TXT CONTRASEÑA-->
+                <div class="mb-3 d-grid gap-2 col-7 mx-auto">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" name="txt_Contrasenia">
+
+                    <!--BOTON OLVIDO CONTRASEÑA-->
+                    <a type="button" class="btn btn-link" style="font-size: 15px;" href="/recuperacion">¿Olvidaste tu
+                        Contraseña?</a>
+                </div>
+
+                <!-- BOTON CONTRASEÑA-->
+                <div class="d-grid gap-4 col-5 mx-auto" style="margin-top: 23px; margin-bottom: 100px;">
+                    <button style="font-size:130%" class="btn btn-block btn-outline-dark" name="btn_Entrar">
+                        Siguiente
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<%- include("../template/footer") %>
+    <%- include("../template/footer") %>

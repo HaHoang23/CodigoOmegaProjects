@@ -1,37 +1,43 @@
-
 <%- include("../template/cabecera") %>
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-4 mx-auto">
-            <div class="card text-center">
-                <div class="card-header">
-                   <h3>SignUp</h3>
-                </div>
-                <div class="card-body">
-                    <!--MANDA A LLAMAR A AUTENTIFICACION DE ROUTER-->
-                    <form action="/signup" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="fullname" placeholder="fullname" class="form-control" autofocus>
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <h3>SignUp</h3>
                     </div>
-                    <div class="form-group">
-                        <input type="text" name="username" placeholder="User name" class="form-control">
-                       
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="password" placeholder="Password" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-success btn-block">
-                            SingUp
-                        </button>
-                    </div>
+                    <div class="card-body">
+                        <!--MANDA A LLAMAR A AUTENTIFICACION DE ROUTER-->
+                        <form action="/signup" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="correo" placeholder="correo" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="contrasena" placeholder="Password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="nom_usuario" placeholder="nom usuario" class="form-control"
+                                    autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="tipo_usuario" placeholder="tipo usuario" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="area_pertenencia" placeholder="area pertenencia"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-success btn-block">
+                                    SingUp
+                                </button>
+                            </div>
 
-                </form>
+                        </form>
+                    </div>
                 </div>
             </div>
+
         </div>
-
     </div>
-</div>
 
-<%- include("../template/footer") %>
+    <%- include("../template/footer") %>

@@ -24,7 +24,7 @@
         </style>
         <div class="row">
 
-            <!-- TCT INICIO-->
+            <!-- TXT INICIO-->
             <figure class="text-center" style="margin-top: 100px; ">
                 <blockquote class="blockquote" style="font-size: 30px;">
                     <p>Establecer nueva contraseña</p>
@@ -36,24 +36,24 @@
                 Ingrese una nueva contraseña
             </p>
 
-            <!-- FORM USUARIO-->
-            <form>
+            <form action="/restablecer" method="POST">
+                <!-- FORM CONTRASEÑA-->
                 <div class="mb-3 d-grid gap-2 col-7 mx-auto">
                     <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <input type="password" class="form-control" id="txt_Contrasenia" name="txt_Contrasenia">
                 </div>
                 <div class="mb-3 d-grid gap-2 col-7 mx-auto">
                     <label for="exampleInputPassword1" class="form-label">Repetir contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <input type="password" class="form-control" id="password">
+                </div>
+
+                <!-- BOTON-->
+                <div class="d-grid gap-4 col-5 mx-auto" style="margin-top: 23px;">
+                    <button style="font-size:130%" class="btn btn-outline-dark">
+                        Siguiente
+                    </button>
                 </div>
             </form>
-
-            <!-- BOTON-->
-            <div class="d-grid gap-4 col-5 mx-auto" style="margin-top: 23px;">
-                <a href="#" style="font-size:130%" class="btn btn-outline-dark" role="button" data-bs-toggle="button">
-                    Siguiente
-                </a>
-            </div>
         </div>
     </div>
     <%- include("template/footer") %>

@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const mysql = require('mysql');
-require('./passport');
+require('./model/passport');
 
 const morgan = require('morgan');
 const passport = require('passport');
@@ -10,12 +10,16 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session');
 const cookieParser = require('cookie-parser');
-//const flash       = require('req-flash');
+
 
 app.use(cookieParser());
-app.use(session({ secret: '123', resave: true, saveUninitialized: true}));
+app.use(session({
+   secret: 'secret',
+   resave: true,
+   saveUninitialized: true
+}));
 app.use(flash());
-
+app.use(express.urlencoded({ extended: false }));
 
 
 //CONFIGURACION 
@@ -30,9 +34,7 @@ const connection = mysql.createConnection = {
    USER: "b133b38c1d2d14",
    PASSWORD: "bba5f4e3",
    DB: "heroku_3cf5fb41ba44ac8"
- };
-
-
+};
 
 //MOTOR DE PLANTILLAS
 app.set("views", __dirname + "/views");
@@ -40,15 +42,16 @@ app.set("views", __dirname + "/views");
 //MIDDLEWARES
 
 app.use(morgan('dev'));
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
 //VARIABLES
-app.use((req,res,next)=>{
-   app.locals.success = req.flash('success');
-   app.locals.message = req.flash('message');
+app.use((req, res, next) => {
+   res.locals.success_msg = req.flash('success_msg');
+   res.locals.message = req.flash('message');
+   app.locals.user = req.user; //ACCEDER A LA INFO DEL USER CONECTADO
    next();
 })
 
@@ -56,15 +59,10 @@ app.use((req,res,next)=>{
 app.use(express.static(__dirname + "/public"));
 
 //RUTAS WEB
-app.use('/', require('./router/RutasWeb'));
-
+app.use('/', require('./controller/router/RutasWeb'));
 
 //EJEMPLO
-app.use('/links', require('./router/links'));
-app.use('/', require('./router/autentificacion'));
-
-
-
+app.use('/', require('./controller/router/autentificacion'));
 
 //ERROR 404
 app.use((req, res, next) => {
@@ -76,6 +74,6 @@ app.use((req, res, next) => {
 
 //INCIAR SERVER
 app.listen(port, () => {
-   console.log(`Estas con express`);
+   console.log('Connected with Express');
 })
 
