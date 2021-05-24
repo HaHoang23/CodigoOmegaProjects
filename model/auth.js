@@ -1,5 +1,6 @@
 module.exports = {
 
+    
     //VERIFICAR SI ESTA EN SESIÓN EL USER
     isLoggedIn(req,res,next) {
         if(req.isAuthenticated()) {
