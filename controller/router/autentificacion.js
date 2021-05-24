@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+//
 const passport = require('passport');
 
 //OBJETO PARA VERIFICAR SI ESTÁ LOGGED EL USER
